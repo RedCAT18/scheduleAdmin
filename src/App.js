@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Provider } from 'react-redux';
 
-import styled, { injectGlobal, ThemeProvider } from 'styled-components';
+import { injectGlobal, ThemeProvider } from 'styled-components';
 
 import store from './store';
 
 import theme from './assets/theme';
 import Header from './components/Header';
+import Slide from './components/Slide';
 
 injectGlobal`
 body {
@@ -20,7 +21,10 @@ class App extends Component {
     return (
       <Provider store={store}>
         <ThemeProvider theme={theme}>
-          <Header />
+          <Fragment>
+            <Header />
+            <Slide />
+          </Fragment>
         </ThemeProvider>
       </Provider>
     );

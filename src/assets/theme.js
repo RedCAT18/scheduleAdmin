@@ -8,12 +8,16 @@ const theme = {
   secondDarkerColor: '#7f8fa6',
 
   warningColor: '#c23616',
-  pointColor: '#192a56',
+  pointColor: '#192a56'
+};
 
+const sizes = {
   smallScale: '640px',
   mediumScale: '768px',
   largeScale: '960px',
   exLargeScale: '1200px'
 };
+
+export { sizes };
 
 export default theme;
