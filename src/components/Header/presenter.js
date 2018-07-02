@@ -20,8 +20,9 @@ const HeaderContent = styled.div`
   padding: 10px;
   h1 {
     margin: 0;
-    font-size: 28px;
+    font-size: 1.5rem;
     font-weight: 100;
+    font-family: ${props => props.theme.nanum};
   }
   @media (max-width: ${sizes.mediumScale}) {
     ${props => {
@@ -31,7 +32,18 @@ const HeaderContent = styled.div`
 `;
 
 class Header extends Component {
+  _openModal() {}
+
+  _renderUsermenu(auth, modal) {
+    return auth ? (
+      <h1>Username</h1>
+    ) : (
+      <h1 onClick={() => this.props.attemptLogin()}>Login</h1>
+    );
+  }
+
   render() {
+    const { isLoggedIn } = this.props;
     return (
       <HeaderStyle>
         <HeaderContent>
@@ -39,7 +51,7 @@ class Header extends Component {
         </HeaderContent>
 
         <HeaderContent usermenu>
-          <h1>NAV</h1>
+          {this._renderUsermenu(isLoggedIn)}
         </HeaderContent>
       </HeaderStyle>
     );

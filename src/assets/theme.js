@@ -8,7 +8,10 @@ const theme = {
   secondDarkerColor: '#7f8fa6',
 
   warningColor: '#c23616',
-  pointColor: '#192a56'
+  pointColor: '#192a56',
+
+  caveat: `'Caveat Brush', cursive`,
+  nanum: `'Nanum Gothic', sans-serif`
 };
 
 const sizes = {
